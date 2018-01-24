@@ -32,4 +32,5 @@ alias gfc='python "F:\projects\hacker-scripts\FetchAndCheckoutBranch.py"'
 alias gf='python "F:\projects\hacker-scripts\GitFetch.py"'
 alias gfa='python "F:\projects\hacker-scripts\GitFetch.py" all'
 alias bs='"F:\projects\ecs7\Database\Embed.ECS.DatabaseWizard\BuildWithSchemaChanges.bat";cd /f/projects/ecs7/Database/Embed.ECS.DatabaseWizard'
+alias ps=powershell
 PROMPT_COMMAND='history -a ~/.bash_history'
