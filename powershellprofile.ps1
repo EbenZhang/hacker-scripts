@@ -4,6 +4,7 @@ if ($host.Name -eq 'ConsoleHost')
 {
     Import-Module PsGet
     Import-Module PSReadline
+    Import-Module posh-git
     try{
         Set-PSReadlineOption -EditMode vi
         Set-PSReadlineKeyHandler -Key Ctrl+r -Function ReverseSearchHistory -ViMode Insert
