@@ -52,7 +52,7 @@ function gfc([string]$branch) {
     $curBranch = & git rev-parse --abbrev-ref HEAD
     if($curBranch -eq $branch) {
         & git reset --hard origin/$branch
-    } else {
+    } else {        
         & git checkout -f -b $branch "origin/$branch"
     }
 }
@@ -68,4 +68,23 @@ function br() {
 function bs() {
     Set-Location F:\projects\ecs7\Database\Embed.ECS.DatabaseWizard
     & .\BuildWithSchemaChanges.bat
+}
+if(test-path alias:cd) {
+    Remove-Item Alias:cd
+}
+
+function cd {
+    if ($args[0] -eq '-') {
+        $pwd=$OLDPWD;
+    } else {
+        $pwd=$args[0];
+    }
+    
+    $tmp=pwd;
+    
+    if ($pwd) {
+        Set-Location $pwd;
+    }
+    
+    Set-Variable -Name OLDPWD -Value $tmp -Scope global;
 }
