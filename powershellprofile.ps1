@@ -9,6 +9,9 @@ if ($host.Name -eq 'ConsoleHost')
         Set-PSReadlineOption -EditMode vi
         Set-PSReadlineKeyHandler -Key Ctrl+r -Function ReverseSearchHistory -ViMode Insert
         Set-PSReadlineKeyHandler -Key Ctrl+r -Function ReverseSearchHistory -ViMode Command
+        Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
+        Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
+        Set-PSReadLineKeyHandler -Key Tab -Function Complete
     } catch{}
 }
 
