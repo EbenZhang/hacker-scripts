@@ -38,12 +38,16 @@ function j([string]$jiraIssue) {
     & start "https://helixleisure.atlassian.net/browse/$jiraIssue" 
 }
 
-function gfc([string]$branch) {
+function gf([string]$branch) {
     Write-Host "fetching $branch"
     & git fetch origin $branch
     if($LASTEXITCODE -ne 0) {
-        Exit $LASTEXITCODE
+        throw "Failed to fetch branch $branch"
     }
+}
+function gfc([string]$branch) {
+    gf -branch $branch
+
     $uncommited = & git status -s --untracked-files=no
     if(![string]::IsNullOrWhiteSpace($uncommited)) {
         $choice = Read-Host -Prompt "You have uncommitted local changes. Press 'Y' to continue."
