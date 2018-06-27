@@ -15,6 +15,8 @@ if ($host.Name -eq 'ConsoleHost')
 }
 
 function c7 {
+    $oldDir = pwd
+    Set-Variable -Name OLDPWD -Value $oldDir -Scope global;
     set-location "f:\projects\ecs7"
 }
 
@@ -71,6 +73,8 @@ function br() {
 }
 
 function bs() {
+    $oldDir = pwd
+    Set-Variable -Name OLDPWD -Value $oldDir -Scope global;
     Set-Location F:\projects\ecs7\Database\Embed.ECS.DatabaseWizard
     & .\BuildWithSchemaChanges.bat
 }
