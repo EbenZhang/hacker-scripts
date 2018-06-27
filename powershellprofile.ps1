@@ -65,11 +65,11 @@ function gfc([string]$branch) {
 }
 
 function bd() {
-    msbuild.exe "/t:restore;build" /m /p:Configuration=Debug
+    msbuild.exe "/t:restore;build" /m /p:Configuration=Debug $args
 }
 
 function br() {
-    msbuild.exe "/t:restore;build" /m /p:Configuration=Release
+    msbuild.exe "/t:restore;build" /m /p:Configuration=Release $args
 }
 
 function bs() {
