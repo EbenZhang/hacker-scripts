@@ -51,7 +51,7 @@ function gfc([string]$branch) {
     $curBranch = & git rev-parse --abbrev-ref HEAD
     if($curBranch -eq $branch) {
         & git reset --hard origin/$branch
-    } else {        
+    } else {
         & git branch -D $branch
         
         & git checkout -f -b $branch "origin/$branch"
@@ -89,3 +89,5 @@ function cd {
     
     Set-Variable -Name OLDPWD -Value $tmp -Scope global;
 }
+
+set-alias which where.exe
