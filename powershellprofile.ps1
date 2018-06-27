@@ -32,6 +32,10 @@ function p([int]$prNumber) {
     & start "https://github.com/embedcard/ecs7/pull/$prNumber" 
 }
 
+function j([string]$jiraIssue) {
+    & start "https://helixleisure.atlassian.net/browse/$jiraIssue" 
+}
+
 function gfc([string]$branch) {
     Write-Host "fetching $branch"
     & git fetch origin $branch
