@@ -1,25 +1,48 @@
 #set editing-mode vi
-alias tst='nunit3-console.exe --agents=8'
 alias telnet='/C/Windows/System32/telnet.exe'
 alias ll='ls -al'
-alias np='/C/Program\ Files\ \(x86\)/Notepad++/notepad++.exe'
 alias dir='ls'
-alias bd='msbuild.exe //t:restore\;build //m //p:Configuration=Debug'
-alias br='msbuild.exe //t:restore\;build //m //p:Configuration=Release'
-alias msbuild='msbuild.exe //m //t:restore\;build'
-alias 7='start https://github.com/embedcard/ecs7 &'
-alias 6='start https://github.com/embedcard/ecs6 &'
-alias w='start https://helixleisure.atlassian.net/wiki/dashboard.action &'
-alias pp='python "F:\Projects\hacker-scripts\GotoPullRequest.py" 6'
-alias p='python "F:\Projects\hacker-scripts\GotoPullRequest.py" 7'
-alias c6='cd /f/projects/ecs6'
-alias c7='cd /f/projects/ecs7'
-alias ws='python "F:\projects\hacker-scripts\SearchWiki.py"'
-alias vim='/g/tools/Vim/vim80/gvim.exe'
-alias vi='/g/tools/Vim/vim80/gvim.exe'
-alias gfc='python "F:\projects\hacker-scripts\FetchAndCheckoutBranch.py"'
-alias gf='python "F:\projects\hacker-scripts\GitFetch.py"'
-alias gfa='python "F:\projects\hacker-scripts\GitFetch.py" all'
-alias bs='"F:\projects\ecs7\Database\Embed.ECS.DatabaseWizard\BuildWithSchemaChanges.bat";cd /f/projects/ecs7/Database/Embed.ECS.DatabaseWizard'
 alias ps=powershell
 PROMPT_COMMAND='history -a ~/.bash_history'
+
+function gf(){
+    powershell -command "gf $@"
+}
+
+function gfc(){
+    powershell -command "gfc $@"
+}
+
+function bs(){
+    powershell -command "bs $@"
+}
+
+function c7(){
+    cd /f/Projects/ecs7
+}
+
+function p(){
+    powershell -command "p"
+}
+
+function vim(){
+    powershell -command "vim $@"
+}
+
+function msbuild(){
+    powershell -command "msbuild $@"
+}
+
+function bd(){
+    powershell -command "bd $@"
+}
+
+function br(){
+    powershell -command "br $@"
+}
+
+function np(){
+    powershell -command "np $@"
+}
+
+alias vi=vim

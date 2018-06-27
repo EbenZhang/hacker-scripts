@@ -18,5 +18,4 @@ Original: http://bash.im/quote/436725 (in Russian)
 
 ## Usage
 
-You need python 2.x, Bash to run the scripts. And need to find out how to use it yourself.
-
+You need Powershell or Bash to run the scripts and need to find out how to use it yourself.
