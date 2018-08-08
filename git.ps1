@@ -25,8 +25,11 @@ function gfc([string]$branch) {
     if($curBranch -eq $branch) {
         & git reset --hard origin/$branch
     } else {
-        & git branch -D $branch
-        
+        & git show-ref --heads "$branch"
+        if($LASTEXITCODE -eq 0){
+            & git branch -D $branch
+        }
+
         & git checkout -f -b $branch "origin/$branch"
     }
 }
