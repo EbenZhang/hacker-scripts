@@ -13,6 +13,7 @@ function gfc([string]$branch) {
 
     $uncommited = & git status -s --untracked-files=no
     if(![string]::IsNullOrWhiteSpace($uncommited)) {
+        git status
         $choice = Read-Host -Prompt "You have uncommitted local changes. Press 'Y' to continue."
 
         if($choice -ne "Y") {
